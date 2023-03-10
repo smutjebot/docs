@@ -1,0 +1,38 @@
+name: 🐛 Bug report
+description: Report errors or unexpected behavior for us to improve.
+labels: [🐛 bug, 👓 triage]
+body:
+  - type: textarea
+    attributes:
+      label: 📝 Description
+      description: A small description of the bug, if possible provide a set of bullet points to be more precise.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 🪜 Reproduction Steps
+      description: List steps to reproduce the error and details on what happens and what you expected to happen.
+      value: |
+        1. The first step
+        2. The second step
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: ℹ Environment / Computer Info
+      description: Please provide the details of the system Docs is running on.
+      value: |
+        - **Docs version**: ` `
+        - **Operating System**: ` `
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 📸 Screenshots
+      description: Place any screenshots of the issue here if needed
+    validations:
+      required: false

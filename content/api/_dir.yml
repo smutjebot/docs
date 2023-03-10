@@ -1,0 +1,4 @@
+title: 'API'
+navigation: true
+icon: heroicons-outline:bookmark-alt
+navigation.redirect: /api/getting-started

@@ -1,0 +1,47 @@
+name: Lint
+
+on: [push, release]
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: ['ubuntu-latest']
+        node-version: ['14.x', '16.x', '18.x']
+
+    steps:
+      - name: Repository Checkout 🛎
+        uses: actions/checkout@v3.3.0
+
+      - name: Setup node env v${{ matrix.node-version }} 🏗
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: true
+
+      - name: Cache node_modules 📦
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        uses: actions/cache@v3.3.0
+        env:
+          cache-name: node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ env.cache-name }}-
+            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-
+
+      - name: Install dependencies 👨🏻‍💻
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Run linter 👀
+        run: yarn run lint
