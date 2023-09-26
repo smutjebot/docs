@@ -14,21 +14,21 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest']
-        node-version: ['14.x', '16.x', '18.x']
+        node-version: ['16.x', '18.x']
 
     steps:
       - name: Repository Checkout 🛎
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4.1.0
 
       - name: Setup node env v${{ matrix.node-version }} 🏗
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.8.1
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
       - name: Cache node_modules 📦
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         env:
           cache-name: node-modules
         with:

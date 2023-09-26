@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
@@ -10,9 +10,9 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@nuxt-themes/docus": "^1.9.9",
-    "@nuxt/eslint-config": "^0.1.1",
-    "eslint": "^8.36.0",
-    "nuxt": "^3.2.2"
+    "@nuxt-themes/docus": "^1.14.7",
+    "@nuxt/eslint-config": "^0.2.0",
+    "eslint": "^8.50.0",
+    "nuxt": "^3.7.4"
   }
 }
