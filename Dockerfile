@@ -3,7 +3,7 @@
 #############
 
 # base image
-FROM node:21-alpine3.17 as build
+FROM node:20-alpine3.17 as build
 
 # set working directory
 WORKDIR /src
@@ -27,7 +27,7 @@ RUN yarn run build
 #############
 
 # base image
-FROM node:21-alpine3.17 as server
+FROM node:20-alpine3.17 as server
 
 WORKDIR /app
 
