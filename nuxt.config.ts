@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
   extends: ['@nuxt-themes/docus'],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   compatibilityDate: '2024-07-04',
 })
