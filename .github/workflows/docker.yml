@@ -52,7 +52,7 @@ jobs:
 
       - name: Build & Push Docker Image 📦
         id: docker_build
-        uses: docker/build-push-action@v6.5.0
+        uses: docker/build-push-action@v6.6.1
         with:
           context: .
           platforms: linux/amd64
