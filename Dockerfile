@@ -3,13 +3,13 @@
 #############
 
 # base image
-FROM node:20-alpine3.17 as build
+FROM node:20-alpine3.17 AS build
 
 # set working directory
 WORKDIR /src
 
 # add `/src/node_modules/.bin` to $PATH
-ENV PATH /src/node_modules/.bin:$PATH
+ENV PATH=/src/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 ADD yarn.lock package.json ./
@@ -27,7 +27,7 @@ RUN yarn run build
 #############
 
 # base image
-FROM node:20-alpine3.17 as server
+FROM node:20-alpine3.17 AS server
 
 WORKDIR /app
 
