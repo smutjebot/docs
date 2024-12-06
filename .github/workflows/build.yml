@@ -28,7 +28,7 @@ jobs:
 
       - name: Cache node_modules 📦
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        uses: actions/cache@v4.1.1
+        uses: actions/cache@v4.2.0
         env:
           cache-name: node-modules
         with:
